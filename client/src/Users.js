@@ -65,10 +65,11 @@ export const Userlist = users => (
       <EmailField source='email' />
       <TextField source='id' />
       <ShowButton label='Show' />
-      <EditButton basepath='/user' />
+      <EditButton basepath='/user' label='Edit' />
       <DeleteWithConfirmButton
         confirmContent='Are you sure want to DELETE this user'
         basepath='/user'
+        label='Delete'
       />
     </DatagridConfigurable>
   </List>
