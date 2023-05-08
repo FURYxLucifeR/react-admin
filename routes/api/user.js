@@ -75,6 +75,7 @@ router.get('/', async (req, res) => {
     // console.log(+endIndex - +startIndex + 1);
 
     const users = await User.find(Query)
+      .select('-password -__v')
       .skip(+startIndex)
       .limit(+endIndex - +startIndex + 1)
       .sort(sort);
@@ -212,7 +213,7 @@ router.post(
 
 router.get('/:id', async (req, res) => {
   try {
-    const user = await User.findById(req.params.id);
+    const user = await User.findById(req.params.id).select('-password -__v');
     if (!user) {
       return res.status(400).json({ msg: ' no user' });
     }
