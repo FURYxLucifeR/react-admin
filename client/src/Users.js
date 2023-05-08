@@ -97,7 +97,6 @@ const postFilter = [
   <TextInput label='title' source='title' />,
   <TextInput label='discription' source='discription' />,
   <TextInput label='User ID' source='user._id' />,
-  // <TextInput label='Username' source='name' />,
   <TextInput label='search' source='q' alwaysOn />
 ];
 
