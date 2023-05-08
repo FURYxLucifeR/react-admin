@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Admin, Resource } from 'react-admin';
 import { Userlist } from '../Users';
-import { Notification } from 'react-admin';
 import simpleRestProvider from 'ra-data-simple-rest';
 import UserCreate from '../components/UserCreate';
 import EditUser from '../components/EditUser';

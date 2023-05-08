@@ -2,19 +2,14 @@ import {
   TextField,
   List,
   EmailField,
-  Datagrid,
   DatagridConfigurable,
   EditButton,
   DeleteWithConfirmButton,
   TextInput,
-  SimpleForm,
   Show,
-  SimpleShowLayout,
   ShowButton,
-  Layout,
   DateField,
   RichTextField,
-  ShowBase,
   ListButton,
   TopToolbar,
   SelectColumnsButton,
@@ -24,7 +19,6 @@ import {
   FilterButton
 } from 'react-admin';
 import Custompage from './components/CustomPage';
-import { Grid } from '@mui/material';
 
 //=========> toptool on page
 const UserEditActions = () => (
@@ -34,7 +28,7 @@ const UserEditActions = () => (
   </TopToolbar>
 );
 //======> action const of list
-const UserAction = users => (
+const UserAction = () => (
   <TopToolbar>
     <SelectColumnsButton />
     <CreateButton />
@@ -60,12 +54,12 @@ export const Userlist = users => (
     pagination={<Custompage />}
   >
     <DatagridConfigurable>
-      <TextField variant='body1' source='firstname' />
-      <TextField variant='body1' source='lastname' />
-      <EmailField source='email' />
-      <TextField source='id' />
+      <TextField variant='body1' source='firstname' label='Firstname' />
+      <TextField variant='body1' source='lastname' label='Lastname' />
+      <EmailField source='email' label='Email' />
+      <TextField source='id' label='ID' />
       <ShowButton label='Show' />
-      <EditButton basepath='/user' label='Edit' />
+      <EditButton label='Edit' />
       <DeleteWithConfirmButton
         confirmContent='Are you sure want to DELETE this user'
         basepath='/user'
@@ -117,11 +111,12 @@ export const postlist = posts => (
       <TextField source='name' label='Username' />
 
       <ShowButton label='Show' />
-      <EditButton basepath='/post' />
+      <EditButton basepath='/post' label='Edit' />
 
       <DeleteWithConfirmButton
         confirmContent='Are you sure want to DELETE this post'
         basepath='/post'
+        label='Delete'
       />
     </DatagridConfigurable>
   </List>
